@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <!-- PWA / Manifest (placeholders – replace icons with real ones for production) -->
+    <link rel="manifest"
+        href="data:application/manifest+json;base64,ewogICJuYW1lIjogIk1hcnkgJ3MgSGlnaGx5IFNlbnNpdGl2ZSBTb3VsIiwKICAic2hvcnRfbmFtZSI6ICJNYXJ5J3MgSFNQIiwKICAic3RhcnRfdXJsIjogIi4iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiNmZmYwZjUiLAogICJ0aGVtZV9jb2xvciI6ICIjZmY4NWEyIiwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMiOiAiZGF0YTppbWFnZS9wbmc7YmFzZTY0LCAiLAogICAgICAic2l6ZXMiOiAiMTkyeDE5MiIsCiAgICAgICJ0eXBlIjogImltYWdlL3BuZyIKICAgIH0sCiAgICB7CiAgICAgICJzcmMiOiAiZGF0YTppbWFnZS9wbmc7YmFzZTY0LCAiLAogICAgICAic2l6ZXMiOiAiNTEyeDUxMiIsCiAgICAgICJ0eXBlIjogImltYWdlL3BuZyIKICAgIH0KICBdCn0=">
+    <meta name="theme-color" content="#ff85a2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hey Mary 🌸 Are You a Highly Sensitive Soul?</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700;900&family=Quicksand:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="lang-toggle">
+            <button class="lang-btn active" id="btnEn">English</button>
+            <button class="lang-btn" id="btnAr">العربية</button>
+        </div>
+
+        <h1 id="title">Hey Mary 🌸 Are You a Highly Sensitive Soul?</h1>
+        <div class="butterfly" id="butterfly">🦋</div>
+
+        <div class="intro" id="intro">
+            This is a sweet little self-check inspired by Elaine Aron’s Highly Sensitive Person scale 💕<br>
+            Answer with your heart — it only takes a few cozy minutes ✨
+        </div>
+
+        <div class="progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <form id="quizForm"></form>
+
+        <button id="submitBtn">Show Me My Result, Please! 🌷</button>
+
+        <div id="result" class="result hidden"></div>
+    </div>
+</body>
+
+</html>

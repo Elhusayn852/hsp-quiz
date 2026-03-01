@@ -1,0 +1,274 @@
+/* ==========================================================================
+   HSP Quiz – Final Mobile-First, Girly Pastel Design (2026-ready)
+   Soft pink/yellow tones, sensitive brain theme, butterfly softness
+   ========================================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-start: #fff5f8;
+    /* ultra-soft pink */
+    --bg-end: #fffdf5;
+    /* gentle warm yellow */
+    --accent: #ff85a2;
+    /* loving pink */
+    --accent-glow: rgba(255, 133, 162, 0.20);
+    --text: #3d1f32;
+    --gray: #6b5b6e;
+    --light-card: rgba(255, 255, 255, 0.96);
+    --border-soft: rgba(255, 182, 193, 0.45);
+
+    --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-arabic: 'Cairo', 'Tajawal', system-ui, sans-serif;
+    --font-heading: 'Playfair Display', Georgia, serif;
+}
+
+body {
+    font-family: var(--font-body);
+    background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 1.2rem 0.8rem;
+    font-size: 1rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Full RTL support for Arabic */
+[dir="rtl"] body {
+    direction: rtl;
+    text-align: right;
+    font-family: var(--font-arabic);
+}
+
+/* Main card – floating, soft, rounded */
+.container {
+    max-width: 100%;
+    width: 94%;
+    margin: 0 auto;
+    background: var(--light-card);
+    padding: 1.8rem 1.2rem;
+    border-radius: 2.2rem;
+    box-shadow: 0 14px 38px var(--accent-glow);
+    border: 1px solid var(--border-soft);
+    backdrop-filter: blur(10px);
+}
+
+/* Title & butterfly – dreamy */
+h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.1rem, 9vw, 3rem);
+    text-align: center;
+    color: var(--accent);
+    margin: 0.5rem 0 1rem;
+    font-style: italic;
+    line-height: 1.15;
+    text-shadow: 0 3px 14px rgba(255, 133, 162, 0.18);
+}
+
+.butterfly {
+    font-size: clamp(3rem, 16vw, 4.8rem);
+    text-align: center;
+    margin: -1.2rem 0 1.4rem;
+    filter: drop-shadow(0 6px 16px rgba(255, 105, 180, 0.28));
+}
+
+/* Language buttons – cute pills, bigger on mobile */
+.lang-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.8rem;
+    flex-wrap: wrap;
+}
+
+.lang-btn {
+    background: white;
+    border: 2px solid var(--pink);
+    color: var(--accent);
+    font-size: 1.05rem;
+    padding: 0.85rem 1.6rem;
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    min-width: 120px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.lang-btn:hover {
+    background: rgba(255, 182, 193, 0.18);
+    transform: scale(1.05);
+}
+
+.lang-btn.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+    box-shadow: 0 8px 22px rgba(255, 133, 162, 0.4);
+}
+
+/* Intro / result text */
+.intro,
+.result {
+    text-align: center;
+    font-size: clamp(1.05rem, 4.2vw, 1.2rem);
+    color: var(--gray);
+    margin-bottom: 1.8rem;
+    line-height: 1.8;
+}
+
+[dir="rtl"] .intro,
+[dir="rtl"] .result {
+    text-align: right;
+}
+
+/* Progress – elegant thin bar */
+.progress {
+    height: 0.8rem;
+    background: rgba(255, 235, 238, 0.8);
+    border-radius: 999px;
+    margin: 1.6rem 0;
+    overflow: hidden;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #ff9ab5, #ff85a2);
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 999px;
+}
+
+/* Questions – spacious, soft cards */
+.question {
+    margin: 1.6rem 0;
+    padding: 1.4rem;
+    background: rgba(255, 245, 247, 0.78);
+    border-radius: 1.6rem;
+    border: 1.5px dashed #ffb6c1;
+    transition: all 0.28s ease;
+}
+
+.question:hover {
+    background: rgba(255, 235, 240, 0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 182, 193, 0.22);
+}
+
+.question p {
+    font-size: clamp(1.1rem, 4.5vw, 1.32rem);
+    margin-bottom: 1.2rem;
+    color: #c1356e;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+/* Radio options – large, tappable */
+label {
+    display: flex;
+    align-items: center;
+    margin: 1.1rem 0;
+    padding: 1.1rem 1.3rem;
+    border-radius: 1.4rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.25s;
+    background: rgba(255, 255, 255, 0.6);
+    min-height: 3.8rem;
+    /* excellent mobile tap size */
+}
+
+label:hover,
+label:focus-within {
+    background: rgba(255, 182, 193, 0.32);
+    transform: translateX(6px);
+}
+
+[dir="rtl"] label:hover,
+[dir="rtl"] label:focus-within {
+    transform: translateX(-6px);
+}
+
+input[type="radio"] {
+    margin-inline-end: 1.1rem;
+    accent-color: var(--accent);
+    transform: scale(1.6);
+    flex-shrink: 0;
+}
+
+/* Submit button – prominent, dreamy */
+button {
+    background: linear-gradient(45deg, var(--accent), #ff9ab5);
+    color: white;
+    border: none;
+    padding: 1.2rem 3.2rem;
+    font-size: 1.2rem;
+    border-radius: 999px;
+    cursor: pointer;
+    margin: 2.4rem auto 1.8rem;
+    display: block;
+    box-shadow: 0 12px 32px rgba(255, 105, 180, 0.35);
+    min-width: 280px;
+    font-weight: 600;
+    transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+button:hover {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 18px 44px rgba(255, 105, 180, 0.5);
+}
+
+/* Result container */
+.result {
+    font-size: clamp(1.08rem, 4.2vw, 1.25rem);
+    padding: 2rem;
+    border-radius: 1.8rem;
+    margin-top: 2.4rem;
+    box-shadow: 0 10px 34px rgba(0, 0, 0, 0.08);
+    background: rgba(255, 250, 245, 0.9);
+}
+
+/* Responsive – scale up gently */
+@media (min-width: 480px) {
+    .container {
+        padding: 2.2rem 1.8rem;
+        width: 90%;
+    }
+}
+
+@media (min-width: 640px) {
+    .container {
+        max-width: 600px;
+        padding: 2.6rem;
+    }
+
+    h1 {
+        font-size: 3.2rem;
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        padding: 3rem 1.5rem;
+    }
+
+    .container {
+        max-width: 760px;
+        padding: 3.4rem 4rem;
+    }
+
+    .question {
+        padding: 1.9rem;
+    }
+
+    label {
+        padding: 1.3rem 1.7rem;
+        font-size: 1.18rem;
+    }
+}
